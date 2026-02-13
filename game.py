@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import random
+import os
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional
 
 
-WEB_PROTOTYPE_URL = "https://ifacardgame-hjha69mlx-ayomidegunjob-8452s-projects.vercel.app/"
+WEB_PROTOTYPE_URL = os.getenv("WEB_PROTOTYPE_URL", "").strip()
 
 
 INTENT_ICONS = {
@@ -181,7 +182,10 @@ class Game:
 
     def print_web_prototype_link(self) -> None:
         print("\nWeb prototype reference:")
-        print(f"- {WEB_PROTOTYPE_URL}")
+        if WEB_PROTOTYPE_URL:
+            print(f"- {WEB_PROTOTYPE_URL}")
+        else:
+            print("- Not configured. Set WEB_PROTOTYPE_URL to display a live link.")
 
     def start_floor(self) -> None:
         self.player.ase = 3

@@ -55,5 +55,5 @@ Current sources are Wikimedia Commons URLs embedded in `game.py` (`CARD_ART`).
 
 ## Web prototype reference
 
-- External reference app: https://ifacardgame-hjha69mlx-ayomidegunjob-8452s-projects.vercel.app/
-- In terminal gameplay, type `link` during combat to reprint this URL.
+- In terminal gameplay, type `link` during combat to show the web prototype URL if configured.
+- Configure it by setting the `WEB_PROTOTYPE_URL` environment variable before launching the game.
