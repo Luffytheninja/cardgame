@@ -51,3 +51,9 @@ The current build is a first prototype. The prioritized implementation roadmap i
 This prototype links to open-license / license-free web images for card inspiration. In-game, type `art` during combat to print source links for cards in your current hand.
 
 Current sources are Wikimedia Commons URLs embedded in `game.py` (`CARD_ART`).
+
+
+## Web prototype reference
+
+- External reference app: https://ifacardgame-hjha69mlx-ayomidegunjob-8452s-projects.vercel.app/
+- In terminal gameplay, type `link` during combat to reprint this URL.

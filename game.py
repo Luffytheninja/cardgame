@@ -5,6 +5,9 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Optional
 
 
+WEB_PROTOTYPE_URL = "https://ifacardgame-hjha69mlx-ayomidegunjob-8452s-projects.vercel.app/"
+
+
 INTENT_ICONS = {
     "attack": "⚔",
     "defend": "🛡",
@@ -176,6 +179,10 @@ class Game:
         for name, info in CARD_ART.items():
             print(f"- {name}: {info['url']} [{info['credit']}]")
 
+    def print_web_prototype_link(self) -> None:
+        print("\nWeb prototype reference:")
+        print(f"- {WEB_PROTOTYPE_URL}")
+
     def start_floor(self) -> None:
         self.player.ase = 3
         self.player.block = 0
@@ -277,7 +284,10 @@ class Game:
                 for i, c in enumerate(self.player.hand, start=1):
                     art_hint = " (art)" if c.art_url else ""
                     print(f"{i}. {c.name} [{c.cost}] - {c.description}{art_hint}")
-                cmd = input("Play card #, 'art', or 'end': ").strip().lower()
+                cmd = input("Play card #, 'art', 'link', or 'end': ").strip().lower()
+                if cmd == "link":
+                    self.print_web_prototype_link()
+                    continue
                 if cmd == "art":
                     for c in self.player.hand:
                         if c.art_url:
@@ -341,6 +351,7 @@ class Game:
     def run(self) -> None:
         print("Welcome to Ìrìn Àṣẹ: Descent from Òrún")
         self.print_card_art_sources()
+        self.print_web_prototype_link()
         for f in range(1, 11):
             self.floor = f
             self.tutorial_text()
