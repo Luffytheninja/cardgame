@@ -57,3 +57,18 @@ Current sources are Wikimedia Commons URLs embedded in `game.py` (`CARD_ART`).
 
 - In terminal gameplay, type `link` during combat to show the web prototype URL if configured.
 - Configure it by setting the `WEB_PROTOTYPE_URL` environment variable before launching the game.
+
+
+## Preview and platform readiness
+
+If you want a quick preview right now, run:
+
+```bash
+python3 game.py
+```
+
+Current state:
+- **Android-ready:** No (CLI prototype only).
+- **Webapp-ready:** No (no browser UI app in this repo yet).
+
+A sample terminal preview transcript is available in `PREVIEW.md`.
