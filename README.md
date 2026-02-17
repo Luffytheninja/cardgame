@@ -1,74 +1,53 @@
 # Ìrìn Àṣẹ: Descent to Ilé-Ifẹ̀
 
-A lightweight single-player terminal card game inspired by Yoruba mythology.  
-The first 10 floors act as a guided tutorial that teaches:
+A lightweight card game inspired by Yoruba mythology.
 
-- Àṣẹ (energy) management
-- Attack/Block combat flow
-- Enemy Intent reading
-- Ifá 4x2 binary signature building
-- Event choices and relic systems
-- Mod-2 card transformation combos
-- Deck cycling discipline
+This repo now contains:
+- A **terminal prototype** (`game.py`) with the original 10-floor tutorial flow.
+- A **deployable web app prototype** (`index.html` + `static/`) for browser testing.
 
-## Run
+## Run (terminal build)
 
 ```bash
 python3 game.py
 ```
+
+## Run (web build, local preview)
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000`.
+
+## Web deployment
+
+This web app is static and can be deployed to Vercel/Netlify/GitHub Pages.
+
+### Vercel quick deploy
+
+1. Push this repo to GitHub.
+2. Import the repo into Vercel.
+3. Framework preset: **Other** (no build command required).
+4. Deploy.
+
+## Web gameplay status
+
+- **Webapp-ready:** Yes (playable browser prototype included in this repo).
+- **Android-ready:** Not yet (no Android packaging pipeline yet).
 
 ## Controls
 
-- Enter the card number to play it.
-- `end` ends your turn.
-- Follow prompts for event and relic choices.
+### Terminal
+- Enter card number to play.
+- `end` ends turn.
+- `art` shows card art references.
+- `link` shows configured external prototype URL.
 
-## Tutorial Floor Highlights
-
-1. **The Descent** — basic attack and Àṣẹ
-2. **The Clay Vessel** — Block and Retain basics
-3. **Eshu's Gaze** — enemy Intent icons
-4. **Binary Signatures** — 4x2 Ifá matrix marks (`I` and `II`)
-5. **The Crossroads** — blessing vs obstruction event
-6. **The Elu Resistance** — first elite, multi-enemy encounter
-7. **Addition Mod 2** — card-combo transformation (board wipe)
-8. **The Inner Head (Ori)** — choose a permanent passive
-9. **The Basket of Existence** — guaranteed treasure relic
-10. **Rhythmic Cycles** — discard-to-draw loop mastery
-
-## Notes
-
-- Designed to be compact and readable, so you can expand cards, enemies, floors, and relics quickly.
-- Uses only Python standard library.
-
-## Project status
-
-The current build is a first prototype. The prioritized implementation roadmap is in `NEXT_STEPS.md`.
-
+### Web
+- Click **Start New Run**.
+- Click **Play** on cards to act each turn.
 
 ## Card art references
 
-This prototype links to open-license / license-free web images for card inspiration. In-game, type `art` during combat to print source links for cards in your current hand.
-
-Current sources are Wikimedia Commons URLs embedded in `game.py` (`CARD_ART`).
-
-
-## Web prototype reference
-
-- In terminal gameplay, type `link` during combat to show the web prototype URL if configured.
-- Configure it by setting the `WEB_PROTOTYPE_URL` environment variable before launching the game.
-
-
-## Preview and platform readiness
-
-If you want a quick preview right now, run:
-
-```bash
-python3 game.py
-```
-
-Current state:
-- **Android-ready:** No (CLI prototype only).
-- **Webapp-ready:** No (no browser UI app in this repo yet).
-
-A sample terminal preview transcript is available in `PREVIEW.md`.
+Terminal card-art links are open-license Wikimedia Commons URLs embedded in `game.py` (`CARD_ART`).
